@@ -78,10 +78,10 @@ class GrafanaAPI:
             self.auth = requests.auth.HTTPBasicAuth(*self.auth)
 
     def __getattr__(self, item):
-        def __request_runnner(url, json=None, headers=None):
+        def __request_runnner(url, json=None, headers=None, files=None):
             __url = '%s%s' % (self.url, url)
             runner = getattr(self.s, item.lower())
-            r = runner(__url, json=json, headers=headers, auth=self.auth, verify=self.verify)
+            r = runner(__url, json=json, headers=headers, auth=self.auth, verify=self.verify, files=files)
 
             if 500 <= r.status_code < 600:
                 raise GrafanaServerError("Server Error {0}: {1}".format(r.status_code,

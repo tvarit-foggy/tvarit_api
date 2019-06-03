@@ -1,5 +1,5 @@
 from .grafana_api import GrafanaAPI
-from .api import (Admin, Dashboard, Datasource, Folder, Organization, Organizations, Search, User, Users, Teams)
+from .api import (Admin, Dashboard, Datasource, Folder, Organization, Organizations, Search, User, Users, Teams, Pipeline, Handler, Model)
 
 
 class GrafanaFace:
@@ -15,3 +15,6 @@ class GrafanaFace:
         self.user = User(self.api)
         self.users = Users(self.api)
         self.teams = Teams(self.api)
+        self.pipelines = Pipeline(self.api)
+        self.model = Model(self.api)
+        self.handler = Handler(self.api)
