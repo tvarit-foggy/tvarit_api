@@ -95,3 +95,24 @@ class Datasource(Base):
         delete_datasource = '/datasources/name/%s' % datasource_name
         r = self.api.DELETE(delete_datasource)
         return r
+
+    def upload_datasource_files(self, datasource_id, filename):
+        """
+
+        :param datasource_id:
+        :return:
+        """
+        upload_datasource = '/datasources/%d/files' % datasource_id
+        files = {'file': open(filename, 'rb')}
+        r = self.api.POST(upload_datasource, files=files)
+        return r
+
+    def delete_datasource_file(self, datasource_id, file_id):
+        """
+
+        :param datasource_id:
+        :return:
+        """
+        upload_datasource = '/datasources/%d/files/%d' % (datasource_id, file_id)
+        r = self.api.DELETE(upload_datasource)
+        return r
