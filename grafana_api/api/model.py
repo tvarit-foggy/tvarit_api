@@ -33,7 +33,6 @@ class Model(Base):
         ))
         return response
 
-
     def list_models(self, limit=100, page=0):
         if type(limit) != int or limit < 0:
             raise ValueError("limit is invalid!")
@@ -45,7 +44,6 @@ class Model(Base):
             page=page
         ))
         return response
-
 
     def get_model(self, id, depends=False):
         if type(id) != int or not id:
