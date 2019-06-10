@@ -42,7 +42,9 @@ class Admin(Base):
         :return:
         """
         change_user_password_path = '/admin/users/%s/password' % user_id
-        r = self.api.PUT(change_user_password_path, json={'password': password})
+        r = self.api.PUT(
+            change_user_password_path, json={
+                'password': password})
         return r
 
     def change_user_permissions(self, user_id, is_grafana_admin):
@@ -53,7 +55,9 @@ class Admin(Base):
         :return:
         """
         change_user_permissions = '/admin/users/%s/permissions' % user_id
-        r = self.api.PUT(change_user_permissions, json={'isGrafanaAdmin': is_grafana_admin})
+        r = self.api.PUT(
+            change_user_permissions, json={
+                'isGrafanaAdmin': is_grafana_admin})
         return r
 
     def delete_user(self, user_id):

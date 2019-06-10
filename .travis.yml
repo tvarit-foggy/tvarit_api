@@ -3,7 +3,7 @@ sudo: false
 
 addons:
   sonarcloud:
-    organization: "m0nhawk-github"
+    organization: "tvarit-foggy"
     token:
       secure: $SONAR_TOKEN
 
@@ -27,7 +27,7 @@ install:
 
 # command to run tests
 script:
-  - nosetests -v --with-xunit --with-coverage --cover-xml --cover-package=grafana_api,api test/
+  - nosetests -v --with-xunit --with-coverage --cover-xml --cover-package=tvarit_api,api test/
 
 after_success:
   - coveralls

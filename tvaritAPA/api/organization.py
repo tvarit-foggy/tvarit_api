@@ -3,7 +3,7 @@ from .base import Base
 
 class Organization(Base):
     def __init__(self, api):
-        super(Organization,self).__init__(api)
+        super(Organization, self).__init__(api)
         self.api = api
 
     def find_organization(self, org_name):
@@ -32,7 +32,9 @@ class Organization(Base):
         :return:
         """
         create_orgs_path = '/orgs'
-        r = self.api.POST(create_orgs_path, json={'name': organization['name']})
+        r = self.api.POST(
+            create_orgs_path, json={
+                'name': organization['name']})
         return r
 
     def update_current_organization(self, organization):
@@ -88,7 +90,7 @@ class Organization(Base):
 
 class Organizations(Base):
     def __init__(self, api):
-        super(Organizations,self).__init__(api)
+        super(Organizations, self).__init__(api)
         self.api = api
         self.path = '/users'
 
@@ -184,7 +186,8 @@ class Organizations(Base):
         r = self.api.GET(update_preference)
         return r
 
-    def organization_preference_update(self, theme='', home_dashboard_id=0, timezone='utc'):
+    def organization_preference_update(
+            self, theme='', home_dashboard_id=0, timezone='utc'):
         """
 
         :param theme:

@@ -3,7 +3,7 @@ from .base import Base
 
 class Users(Base):
     def __init__(self, api):
-        super(Users,self).__init__(api)
+        super(Users, self).__init__(api)
         self.api = api
 
     def search_users(self, query=None, page=None, perpage=None):
@@ -88,7 +88,7 @@ class Users(Base):
 
 class User(Base):
     def __init__(self, api):
-        super(User,self).__init__(api)
+        super(User, self).__init__(api)
         self.api = api
         self.path = '/user'
 
@@ -114,7 +114,9 @@ class User(Base):
             "newPassword": new_password,
             "confirmNew": new_password
         }
-        r = self.api.PUT(change_actual_user_password_path, json=change_actual_user_password_json)
+        r = self.api.PUT(
+            change_actual_user_password_path,
+            json=change_actual_user_password_json)
         return r
 
     def switch_user_organisation(self, user_id, organisation_id):
@@ -124,7 +126,8 @@ class User(Base):
         :param organisation_id:
         :return:
         """
-        switch_user_organisation_path = '/users/%s/using/%s' % (user_id, organisation_id)
+        switch_user_organisation_path = '/users/%s/using/%s' % (
+            user_id, organisation_id)
         r = self.api.POST(switch_user_organisation_path)
         return r
 

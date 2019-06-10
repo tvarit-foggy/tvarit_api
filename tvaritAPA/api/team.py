@@ -119,7 +119,7 @@ class Teams(Base):
         """
         add_team_member_path = '/teams/%s/members' % team_id
         payload = {
-           "userId": user_id
+            "userId": user_id
         }
         r = self.api.POST(add_team_member_path, json=payload)
         return r

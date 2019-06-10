@@ -1,9 +1,10 @@
 from .base import Base
 import requests
 
+
 class Datasource(Base):
     def __init__(self, api):
-        super(Datasource,self).__init__(api)
+        super(Datasource, self).__init__(api)
         self.api = api
 
     def find_datasource(self, datasource_name):
@@ -113,6 +114,7 @@ class Datasource(Base):
         :param datasource_id:
         :return:
         """
-        upload_datasource = '/datasources/%d/files/%d' % (datasource_id, file_id)
+        upload_datasource = '/datasources/%d/files/%d' % (
+            datasource_id, file_id)
         r = self.api.DELETE(upload_datasource)
         return r
