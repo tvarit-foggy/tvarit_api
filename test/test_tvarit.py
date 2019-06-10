@@ -1,5 +1,5 @@
-from tvarit_api.tvarit_api import TokenAuth
-from tvarit_api.tvarit_face import TvaritFace
+from tvaritAPA.tvarit_api import TokenAuth
+from tvaritAPA.tvarit_face import TvaritFace
 import requests
 import unittest
 import sys

@@ -12,7 +12,9 @@ from .api import (
     Teams,
     Pipeline,
     Handler,
-    Model)
+    Model,
+    Machine
+)
 
 
 class TvaritFace:
@@ -38,3 +40,4 @@ class TvaritFace:
         self.pipelines = Pipeline(self.api)
         self.model = Model(self.api)
         self.handler = Handler(self.api)
+        self.machine = Machine(self.api)

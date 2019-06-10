@@ -1,7 +1,7 @@
 # tvaritAPA
 
 from tvarit_api.tvarit_face import TvaritFace
-[![PyPI](https: // img.shields.io / pypi / v / tvarit_api.svg?style=flat - square)](https: // pypi.org / project / tvarit - api /)
+[![PyPI](https://img.shields.io/pypi/v/tvarit_api.svg?style=flat-square)](https://pypi.org/project/tvaritAPA/)
 
 # What is this library for?
 

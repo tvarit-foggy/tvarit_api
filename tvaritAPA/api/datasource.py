@@ -1,5 +1,5 @@
 from .base import Base
-import requests
+
 
 
 class Datasource(Base):

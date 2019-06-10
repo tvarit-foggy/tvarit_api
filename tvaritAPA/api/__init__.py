@@ -10,3 +10,4 @@ from .team import Teams
 from .pipelines import Pipeline
 from .handler import Handler
 from .model import Model
+from .machines import Machine
