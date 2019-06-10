@@ -25,7 +25,6 @@ class Handler(Base):
         ))
         return response
 
-
     def update_handler(self, id, name, data, description="", **kwargs):
         if type(id) != int or not id:
             raise ValueError("Handler id is invalid!")
@@ -58,7 +57,6 @@ class Handler(Base):
             page=page
         ))
         return response
-
 
     def get_handler(self, id, depends=False):
         if type(id) != int or not id:
