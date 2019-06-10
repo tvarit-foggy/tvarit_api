@@ -25,7 +25,6 @@ class Pipeline(Base):
         ))
         return response
 
-
     def update_pipeline(self, id, name, data, description="", **kwargs):
         if type(id) != int or not id:
             raise ValueError("Pipeline id is invalid!")
@@ -57,7 +56,6 @@ class Pipeline(Base):
             page=page
         ))
         return response
-
 
     def get_pipeline(self, id, depends=False):
         if type(id) != int or not id:
