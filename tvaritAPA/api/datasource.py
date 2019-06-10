@@ -1,7 +1,6 @@
 from .base import Base
 
 
-
 class Datasource(Base):
     def __init__(self, api):
         super(Datasource, self).__init__(api)

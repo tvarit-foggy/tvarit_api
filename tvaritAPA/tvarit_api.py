@@ -91,8 +91,10 @@ class TvaritAPI:
                 files=files)
 
             if 500 <= r.status_code < 600:
-                raise TvaritServerError("Server Error {0}: {1}".format(r.status_code,
-                                                                       r.content.decode("ascii", "replace")))
+                raise TvaritServerError(
+                    "Server Error {0}: {1}".format(
+                        r.status_code, r.content.decode(
+                            "ascii", "replace")))
             elif r.status_code == 400:
                 raise TvaritBadInputError("Bad Input: `{0}`".format(r.text))
             elif r.status_code == 401:

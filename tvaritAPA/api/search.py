@@ -6,8 +6,15 @@ class Search(Base):
         super(Search, self).__init__(api)
         self.api = api
 
-    def search_dashboards(self, query=None, tag=None, type_=None, dashboard_ids=None, folder_ids=None, starred=None,
-                          limit=None):
+    def search_dashboards(
+            self,
+            query=None,
+            tag=None,
+            type_=None,
+            dashboard_ids=None,
+            folder_ids=None,
+            starred=None,
+            limit=None):
         """
 
         :param query:
