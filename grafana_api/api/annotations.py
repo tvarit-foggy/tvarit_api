@@ -38,7 +38,7 @@ class Annotations(Base):
             params.append('type=%s' % kwargs['type'])
 
         if kwargs.get('tags'):
-            params.extend(['tags=%s' % v for v in v kwargs['tags']])
+            params.extend(['tags=%s' % v for v in kwargs['tags']])
 
         if params:
             path += '?'

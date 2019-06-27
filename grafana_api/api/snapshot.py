@@ -32,8 +32,9 @@ class Snapshot(Base):
         if limit:
             params.append('limit=%s' % limit)
 
-        path += '?'
-        path += '&'.join(params)
+        if params:
+            path += '?'
+            path += '&'.join(params)
 
         r = self.api.GET(path)
         return r

@@ -40,8 +40,9 @@ class Alerting(Base):
         if dashboardTag:
             params.extend(['dashboardTag=%s' % v for v in dashboardTag])
 
-        path += '?'
-        path += '&'.join(params)
+        if params:
+            path += '?'
+            path += '&'.join(params)
 
         r = self.api.GET(path)
         return r
