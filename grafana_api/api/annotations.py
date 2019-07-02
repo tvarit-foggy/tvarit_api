@@ -63,7 +63,7 @@ class Annotations(Base):
         :param annotation: annotation json request
         :return: response
         """
-        path = 'annotations/graphite'
+        path = '/annotations/graphite'
         r = self.api.POST(path, json=annotation)
         return r
 
@@ -94,6 +94,6 @@ class Annotations(Base):
         :param region_id: ID of region
         :return: response
         """
-        path = 'annotations/region/%s' % region_id
+        path = '/annotations/region/%s' % region_id
         r = self.api.DELETE(path)
         return r

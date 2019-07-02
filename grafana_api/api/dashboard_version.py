@@ -23,7 +23,7 @@ class DashboardVersion(Base):
         :param version_id: Version ID
         :return: response
         """
-        path = '/api/dashboards/id/%s/versions/%s' % (dashboard_id, version_id)
+        path = '/dashboards/id/%s/versions/%s' % (dashboard_id, version_id)
         r = self.api.GET(path)
         return r
 
@@ -33,7 +33,7 @@ class DashboardVersion(Base):
         :param dashboard_id: Dashboard ID
         :return: response
         """
-        path = 'dashboards/id/%s/restore' % dashboard_id
+        path = '/dashboards/id/%s/restore' % dashboard_id
         r = self.api.POST(path, json=json_body)
         return r
 
@@ -42,6 +42,6 @@ class DashboardVersion(Base):
         Method to compare dashboard versions
         :return: response
         """
-        path = 'api/dashboards/calculate-diff'
+        path = '/dashboards/calculate-diff'
         r = self.api.POST(path, json=dashboard_body)
         return r

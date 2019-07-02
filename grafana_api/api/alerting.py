@@ -53,7 +53,7 @@ class Alerting(Base):
         :param alert_id: alert ID
         :return: response
         """
-        path = 'alerts/%s' % alert_id
+        path = '/alerts/%s' % alert_id
         r = self.api.GET(path)
         return r
 
@@ -64,6 +64,6 @@ class Alerting(Base):
         :param json_dict: json dict with pause flag True or False
         :return: response
         """
-        path = 'alerts/%s/pause' % alert_id
+        path = '/alerts/%s/pause' % alert_id
         r = self.api.POST(path, json=json_dict)
         return r
