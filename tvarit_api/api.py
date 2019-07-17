@@ -48,7 +48,7 @@ class TokenAuth(requests.auth.AuthBase):
         return request
 
 
-class TotpAuth(requests.auth.AuthBase):
+class TOTPAuth(requests.auth.AuthBase):
     def __init__(self, org_id, token):
         self.org_id = str(org_id)
         self.totp = pyotp.TOTP(token).now
@@ -98,7 +98,7 @@ class TvaritAPI:
             self.auth = TokenAuth(self.auth)
         else:
             if type(self.auth[0]) == int:
-                self.auth = TotpAuth(*self.auth)
+                self.auth = TOTPAuth(*self.auth)
             else:
                 self.auth = requests.auth.HTTPBasicAuth(*self.auth)
 

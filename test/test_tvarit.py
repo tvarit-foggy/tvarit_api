@@ -9,7 +9,7 @@ else:
 import requests
 
 from tvarit_api import Tvarit
-from tvarit_api.api import TokenAuth
+from tvarit_api.api import TokenAuth, TOTPAuth
 
 
 class MockResponse:
@@ -74,6 +74,12 @@ class TestTvaritAPI(unittest.TestCase):
             ("admin", "admin"), host="localhost", url_path_prefix="", protocol="https"
         )
         self.assertTrue(isinstance(cli.api.auth, requests.auth.HTTPBasicAuth))
+
+    def test_tvarit_totp_auth(self):
+        cli = Tvarit(
+            (1, "secret"), host="localhost", url_path_prefix="", protocol="https"
+        )
+        self.assertTrue(isinstance(cli.api.auth, TOTPAuth))
 
     def test_tvarit_api_token_auth(self):
         cli = Tvarit(
