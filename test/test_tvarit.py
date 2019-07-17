@@ -6,7 +6,10 @@ if sys.version_info > (3, 0):
 else:
     from mock import patch, Mock
 
+import sys
 import requests
+
+sys.path.append('.')
 
 from tvarit_api import Tvarit
 from tvarit_api.api import TokenAuth, TOTPAuth

@@ -1,20 +1,5 @@
 from setuptools import setup, find_packages
-from subprocess import check_output
-
-
-def get_version():
-    try:
-        tag = check_output(
-            ["git", "describe", "--tags", "--abbrev=0", "--match=[0-9]*"]
-        )
-        return tag.decode("utf-8").strip("\n")
-    except Exception:
-        raise RuntimeError(
-            "The version number cannot be extracted from git tag in this source "
-            "distribution; please either download the source from PyPI, or check out "
-            "from GitHub and make sure that the git CLI is available."
-        )
-
+from tvarit_api.version import get_version
 
 with open("README.md") as file:
     long_description = file.read()

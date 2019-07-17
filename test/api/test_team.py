@@ -1,6 +1,8 @@
+import sys
 import unittest
-
 import requests_mock
+
+sys.path.append('.')
 
 from tvarit_api import Tvarit
 
