@@ -1,3 +1,4 @@
+import pyotp
 import requests
 import requests.auth
 
@@ -47,6 +48,17 @@ class TokenAuth(requests.auth.AuthBase):
         return request
 
 
+class TotpAuth(requests.auth.AuthBase):
+    def __init__(self, org_id, token):
+        self.org_id = str(org_id)
+        self.totp = pyotp.TOTP(token).now
+
+    def __call__(self, request):
+        request.headers.update({"Authorization": "TOTP {0}".format(self.totp())})
+        request.headers.update({"X-Grafana-Org-Id": self.org_id})
+        return request
+
+
 class TvaritAPI:
     def __init__(
         self,
@@ -85,7 +97,10 @@ class TvaritAPI:
         if not isinstance(self.auth, tuple):
             self.auth = TokenAuth(self.auth)
         else:
-            self.auth = requests.auth.HTTPBasicAuth(*self.auth)
+            if type(self.auth[0]) == int:
+                self.auth = TotpAuth(*self.auth)
+            else:
+                self.auth = requests.auth.HTTPBasicAuth(*self.auth)
 
     def __getattr__(self, item):
         def __request_runnner(url, json=None, headers=None):
