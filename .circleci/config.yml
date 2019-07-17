@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   tests-3.7: &test-template
-    working_directory: ~/grafana_api
+    working_directory: ~/tvarit_api
     docker:
       - image: circleci/python:3.7
         environment:
@@ -17,7 +17,7 @@ jobs:
             sudo pip install pipenv
             pipenv install
             pipenv install --dev
-      - run: pipenv run coverage run --source grafana_api -m xmlrunner test.test_grafana test.api.test_team -o test-reports
+      - run: pipenv run coverage run --source tvarit_api -m xmlrunner test.test_tvarit test.api.test_team -o test-reports
       - run: pipenv run codecov
       - save_cache:
           key: py-{{ .Branch }}-{{ checksum "Pipfile.lock" }}

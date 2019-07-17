@@ -1,11 +1,6 @@
 workflow "Publish" {
-  resolves = ["publish-to-conda", "publish-to-pypi"]
+  resolves = ["publish-to-pypi"]
   on = "release"
-}
-
-action "publish-to-conda" {
-  uses = "m0nhawk/conda-package-publish-action@master"
-  secrets = ["ANACONDA_USERNAME", "ANACONDA_PASSWORD"]
 }
 
 action "publish-to-pypi" {

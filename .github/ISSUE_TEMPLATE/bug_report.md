@@ -17,9 +17,9 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Versions**
-- Grafana: [ ]
-- `grafana_api`: [ ]
-- Authentication: [Basic] or [Token]
+- Tvarit: [ ]
+- `tvarit_api`: [ ]
+- Authentication: [Basic] or [Token] or [TOTP]
 
 **Additional context**
 Add any other context about the problem here.

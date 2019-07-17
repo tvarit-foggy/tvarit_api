@@ -1,5 +1,5 @@
-from .grafana_api import GrafanaAPI
-from .api import (
+from .api import TvaritAPI
+from .resources import (
     Admin,
     Dashboard,
     Datasource,
@@ -13,7 +13,7 @@ from .api import (
 )
 
 
-class GrafanaFace:
+class Tvarit:
     def __init__(
         self,
         auth,
@@ -23,7 +23,7 @@ class GrafanaFace:
         protocol="http",
         verify=True,
     ):
-        self.api = GrafanaAPI(
+        self.api = TvaritAPI(
             auth,
             host=host,
             port=port,

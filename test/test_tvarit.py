@@ -8,8 +8,8 @@ else:
 
 import requests
 
-from grafana_api.grafana_face import GrafanaFace
-from grafana_api.grafana_api import TokenAuth
+from tvarit_api import Tvarit
+from tvarit_api.api import TokenAuth
 
 
 class MockResponse:
@@ -21,9 +21,9 @@ class MockResponse:
         return self.json_data
 
 
-class TestGrafanaAPI(unittest.TestCase):
-    @patch("grafana_api.grafana_api.GrafanaAPI.__getattr__")
-    def test_grafana_api(self, mock_get):
+class TestTvaritAPI(unittest.TestCase):
+    @patch("tvarit_api.api.TvaritAPI.__getattr__")
+    def test_tvarit_api(self, mock_get):
         mock_get.return_value = Mock()
         mock_get.return_value.return_value = """{
   "email": "user@mygraf.com",
@@ -33,13 +33,13 @@ class TestGrafanaAPI(unittest.TestCase):
   "orgId": 1,
   "isGrafanaAdmin": true
 }"""
-        cli = GrafanaFace(
+        cli = Tvarit(
             ("admin", "admin"), host="localhost", url_path_prefix="", protocol="https"
         )
         cli.users.find_user("test@test.com")
 
-    def test_grafana_api_no_verify(self):
-        cli = GrafanaFace(
+    def test_tvarit_api_no_verify(self):
+        cli = Tvarit(
             ("admin", "admin"),
             host="localhost",
             url_path_prefix="",
@@ -69,14 +69,14 @@ class TestGrafanaAPI(unittest.TestCase):
             verify=False,
         )
 
-    def test_grafana_api_basic_auth(self):
-        cli = GrafanaFace(
+    def test_tvarit_api_basic_auth(self):
+        cli = Tvarit(
             ("admin", "admin"), host="localhost", url_path_prefix="", protocol="https"
         )
         self.assertTrue(isinstance(cli.api.auth, requests.auth.HTTPBasicAuth))
 
-    def test_grafana_api_token_auth(self):
-        cli = GrafanaFace(
+    def test_tvarit_api_token_auth(self):
+        cli = Tvarit(
             "alongtoken012345etc",
             host="localhost",
             url_path_prefix="",

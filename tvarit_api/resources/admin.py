@@ -45,16 +45,16 @@ class Admin(Base):
         r = self.api.PUT(change_user_password_path, json={"password": password})
         return r
 
-    def change_user_permissions(self, user_id, is_grafana_admin):
+    def change_user_permissions(self, user_id, is_tvarit_admin):
         """
 
         :param user_id:
-        :param is_grafana_admin:
+        :param is_tvarit_admin:
         :return:
         """
         change_user_permissions = "/admin/users/%s/permissions" % user_id
         r = self.api.PUT(
-            change_user_permissions, json={"isGrafanaAdmin": is_grafana_admin}
+            change_user_permissions, json={"isGrafanaAdmin": is_tvarit_admin}
         )
         return r
 
