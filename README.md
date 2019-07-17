@@ -1,6 +1,6 @@
 # tvarit_api [![CircleCI](https://img.shields.io/circleci/project/github/tvarit-foggy/tvarit_api.svg?style=flat-square&logo=circleci)](https://circleci.com/gh/KamalGalrani/workflows/tvarit_api/tree/master) [![GitHub license](https://img.shields.io/github/license/tvarit-foggy/tvarit_api.svg?style=flat-square)](https://github.com/tvarit-foggy/tvarit_api/blob/master/LICENSE)  [![Codecov](https://img.shields.io/codecov/c/gh/KamalGalrani/tvarit_api.svg?style=flat-square)](https://codecov.io/gh/KamalGalrani/tvarit_api/)
 
-[![PyPI](https://img.shields.io/pypi/v/tvarit_api.svg?style=flat-square)](https://pypi.org/project/tvarit-api/) [![Conda](https://img.shields.io/conda/v/KamalGalrani/tvarit_api.svg?style=flat-square)](https://anaconda.org/KamalGalrani/tvarit_api)
+[![PyPI](https://img.shields.io/pypi/v/tvarit_api.svg?style=flat-square)](https://pypi.org/project/tvarit-api/) 
 
 ## What is this library for?
 
