@@ -1,11 +1,11 @@
 import unittest
 import requests_mock
-from grafana_api.grafana_face import GrafanaFace
+from tvarit_api import Tvarit
 
 class TeamsTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.cli = GrafanaFace(('admin', 'admin'), host='localhost',
+        self.cli = Tvarit(('admin', 'admin'), host='localhost',
                 url_path_prefix='', protocol='http')
 
     @requests_mock.Mocker()

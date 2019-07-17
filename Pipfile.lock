@@ -7,7 +7,7 @@
         "requires": {},
         "sources": [
             {
-                "name": "grafana_api",
+                "name": "tvarit_api",
                 "url": "https://pypi.python.org/simple",
                 "verify_ssl": true
             }

@@ -28,18 +28,18 @@ requirements:
 
 test:
   imports:
-    - grafana_api
-    - grafana_api.api
+    - tvarit_api
+    - tvarit_api.api
 
 about:
   home: "{{ url }}"
   license: "{{ license }}"
   license_family: "{{ license }}"
   license_file: LICENSE
-  summary: Yet another Python library for Grafana API
-  doc_url: https://m0nhawk.github.io/grafana_api/
+  summary: Python library for Tvarit API
+  doc_url: https://github.com/tvarit-foggy/tvarit_api/wiki
   dev_url:
 
 extra:
   recipe-maintainers:
-    - m0nhawk
+    - KamalGalrani
