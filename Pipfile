@@ -6,6 +6,7 @@ name = "tvarit_api"
 [packages]
 pyyaml = "~=5.1"
 requests = "~=2.22"
+pyotp = "~=2.2"
 
 [dev-packages]
 codecov = "~=2.0"
@@ -13,3 +14,4 @@ coverage = "~=4.5"
 mock = "~=3.0"
 requests-mock = "~=1.6"
 unittest-xml-reporting = "~=2.5"
+funcsigs = "~=1.0"

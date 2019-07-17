@@ -44,29 +44,21 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Install dependencies"
+          command: |
+            sudo pip install pipenv
+            pipenv install
+      - run:
           name: "Build package"
           command: |
             mkdir -p ./dist/
             echo $(git describe --abbrev=0 --tags) > ./dist/VERSION
-            python setup.py sdist
-            python setup.py bdist_wheel
+            pipenv run python setup.py sdist
+            pipenv run python setup.py bdist_wheel
       - persist_to_workspace:
           root: .
           paths:
             - dist
-
-  publish-github-release:
-    docker:
-      - image: cibuilds/github:0.10
-    steps:
-      - attach_workspace:
-          at: ./dist
-      - run:
-          name: "Publish Release on GitHub"
-          command: |
-            VERSION=$(<./dist/dist/VERSION)
-            rm ./dist/dist/VERSION
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./dist/dist/
 
 workflows:
   version: 2
@@ -75,15 +67,4 @@ workflows:
       - tests-3.7
       - tests-3.6
       - tests-2.7
-      - build:
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-      - publish-github-release:
-          requires:
-            - build
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^\d+\.\d+\.\d+$/
+      - build
