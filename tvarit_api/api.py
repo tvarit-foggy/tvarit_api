@@ -2,11 +2,11 @@ import requests
 import requests.auth
 
 
-class GrafanaException(Exception):
+class TvaritException(Exception):
     pass
 
 
-class GrafanaServerError(Exception):
+class TvaritServerError(Exception):
     """
     5xx
     """
@@ -14,7 +14,7 @@ class GrafanaServerError(Exception):
     pass
 
 
-class GrafanaClientError(Exception):
+class TvaritClientError(Exception):
     """
     Invalid input (4xx errors)
     """
@@ -22,7 +22,7 @@ class GrafanaClientError(Exception):
     pass
 
 
-class GrafanaBadInputError(GrafanaClientError):
+class TvaritBadInputError(TvaritClientError):
     """
     400
     """
@@ -30,7 +30,7 @@ class GrafanaBadInputError(GrafanaClientError):
     pass
 
 
-class GrafanaUnauthorizedError(GrafanaClientError):
+class TvaritUnauthorizedError(TvaritClientError):
     """
     401
     """
@@ -47,7 +47,7 @@ class TokenAuth(requests.auth.AuthBase):
         return request
 
 
-class GrafanaAPI:
+class TvaritAPI:
     def __init__(
         self,
         auth,
@@ -96,17 +96,17 @@ class GrafanaAPI:
             )
 
             if 500 <= r.status_code < 600:
-                raise GrafanaServerError(
+                raise TvaritServerError(
                     "Server Error {0}: {1}".format(
                         r.status_code, r.content.decode("ascii", "replace")
                     )
                 )
             elif r.status_code == 400:
-                raise GrafanaBadInputError("Bad Input: `{0}`".format(r.text))
+                raise TvaritBadInputError("Bad Input: `{0}`".format(r.text))
             elif r.status_code == 401:
-                raise GrafanaUnauthorizedError("Unauthorized")
+                raise TvaritUnauthorizedError("Unauthorized")
             elif 400 <= r.status_code < 500:
-                raise GrafanaClientError(
+                raise TvaritClientError(
                     "Client Error {0}: {1}".format(r.status_code, r.text)
                 )
             return r.json()

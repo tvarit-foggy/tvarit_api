@@ -1,10 +1,10 @@
-# grafana_api [![CircleCI](https://img.shields.io/circleci/project/github/m0nhawk/grafana_api.svg?style=flat-square&logo=circleci)](https://circleci.com/gh/m0nhawk/workflows/grafana_api/tree/master) [![GitHub license](https://img.shields.io/github/license/m0nhawk/grafana_api.svg?style=flat-square)](https://github.com/m0nhawk/grafana_api/blob/master/LICENSE)  [![Codecov](https://img.shields.io/codecov/c/gh/m0nhawk/grafana_api.svg?style=flat-square)](https://codecov.io/gh/m0nhawk/grafana_api/)
+# tvarit_api [![CircleCI](https://img.shields.io/circleci/project/github/tvarit-foggy/tvarit_api.svg?style=flat-square&logo=circleci)](https://circleci.com/gh/tvarit-foggy/workflows/tvarit_api/tree/master) [![GitHub license](https://img.shields.io/github/license/tvarit-foggy/tvarit_api.svg?style=flat-square)](https://github.com/tvarit-foggy/tvarit_api/blob/master/LICENSE)  [![Codecov](https://img.shields.io/codecov/c/gh/tvarit-foggy/tvarit_api.svg?style=flat-square)](https://codecov.io/gh/tvarit-foggy/tvarit_api/)
 
-[![PyPI](https://img.shields.io/pypi/v/grafana_api.svg?style=flat-square)](https://pypi.org/project/grafana-api/) [![Conda](https://img.shields.io/conda/v/m0nhawk/grafana_api.svg?style=flat-square)](https://anaconda.org/m0nhawk/grafana_api)
+[![PyPI](https://img.shields.io/pypi/v/tvarit_api.svg?style=flat-square)](https://pypi.org/project/tvarit-api/)
 
 ## What is this library for?
 
-Yet another Grafana API library for Python. Support both 2 and 3 Python versions.
+Tvarit API library for Python. Support both 2 and 3 Python versions.
 
 ## Requirements
 
@@ -15,30 +15,30 @@ You need either 2nd or 3rd version of Python and only the `requests` library ins
 Install the pip package:
 
 ```
-pip install -U grafana_api
+pip install -U tvarit_api
 ```
 
-And then connect to your Grafana API endpoint:
+And then connect to your Tvarit API endpoint:
 
 ```python
-from grafana_api.grafana_face import GrafanaFace
+from tvarit_api import Tvarit
 
-grafana_api = GrafanaFace(auth='abcde....', host='api.my-grafana-host.com')
+tvarit_api = Tvarit(auth='abcde....', host='cloud.tvarit.com')
 
 # Search dashboards based on tag
-grafana_api.search.search_dashboards(tag='applications')
+tvarit_api.search.search_dashboards(tag='applications')
 
 # Find a user by email
-user = grafana_api.users.find_user('test@test.com')
+user = tvarit_api.users.find_user('test@test.com')
 
 # Add user to team 2
-grafana_api.teams.add_team_member(2, user["id"])
+tvarit_api.teams.add_team_member(2, user["id"])
 
 # Create or update a dashboard
-grafana_api.dashboard.update_dashboard(dashboard={'dashboard': {...}, 'folderId': 0, 'overwrite': True})
+tvarit_api.dashboard.update_dashboard(dashboard={'dashboard': {...}, 'folderId': 0, 'overwrite': True})
 
 # Delete a dashboard by UID
-grafana_api.dashboard.delete_dashboard(dashboard_uid='abcdefgh')
+tvarit_api.dashboard.delete_dashboard(dashboard_uid='abcdefgh')
 ```
 
 ## Status of REST API realization
@@ -67,13 +67,13 @@ Work on API implementation still in progress.
 
 ## Issue tracker
 
-Please report any bugs and enhancement ideas using the `grafana_api` issue tracker:
+Please report any bugs and enhancement ideas using the `tvarit_api` issue tracker:
 
-  https://github.com/m0nhawk/grafana_api/issues
+  https://github.com/tvarit-foggy/tvarit_api/issues
 
 Feel free to also ask questions on the tracker.
 
 ## License
 
-`grafana_api` is licensed under the terms of the MIT License (see the file
+`tvarit_api` is licensed under the terms of the MIT License (see the file
 [LICENSE](LICENSE)).

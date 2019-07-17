@@ -2,6 +2,13 @@
 ## [Unreleased]
 
 ### Chore
+- **changelog:** 1.0.0
+- **migration:** Migrated from Grafana API to Tvarit API
+
+
+<a name="1.0.0"></a>
+## [1.0.0] - 2019-07-17
+### Chore
 - **changelog:** 0.7.5
 
 
@@ -61,7 +68,6 @@
 <a name="0.6.0"></a>
 ## [0.6.0] - 2019-03-31
 ### Chore
-- **anaconda:** anaconda package configuration
 - **deploy:** add Python package deployment
 - **gitlab:** remove Gitlab CI
 - **setup:** more configurable Python package configuration

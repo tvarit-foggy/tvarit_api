@@ -1,8 +1,8 @@
 ---
-name: Missing Grafana API endpoint
+name: Missing API endpoint
 about: Report missing endpoint
 
 ---
 
-**What Grafana API endpoint the library is missing?**
-Describe and link the Grafana API endpoint which are currently missing.
+**What API endpoint the library is missing?**
+Describe and link the API endpoint which are currently missing.

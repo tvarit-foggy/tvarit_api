@@ -20,14 +20,14 @@ with open("README.md") as file:
     long_description = file.read()
 
 setup(
-    name="grafana_api",
+    name="tvarit_api",
     version=get_version(),
-    description="Yet another Python library for Grafana API",
+    description="Python library for Tvarit API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/m0nhawk/grafana_api",
-    author="Andrew Prokhorenkov",
-    author_email="andrew.prokhorenkov@gmail.com",
+    url="https://github.com/tvarit-foggy/tvarit_api",
+    author="Tvarit GmbH",
+    author_email="info@tvarit.com",
     license="MIT",
     packages=find_packages(),
     install_requires=["requests", "pyyaml"],
