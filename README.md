@@ -48,8 +48,8 @@ Work on API implementation still in progress.
 | API | Status |
 |---|---|
 | Admin | + |
-| Alerting | - |
-| Annotations | - |
+| Alerting | + |
+| Annotations | + |
 | Authentication | +- |
 | Dashboard | + |
 | Dashboard Versions | - |
@@ -61,7 +61,7 @@ Work on API implementation still in progress.
 | Organisation | + |
 | Other | + |
 | Preferences | + |
-| Snapshot | - |
+| Snapshot | + |
 | Teams | + |
 | User | + |
 

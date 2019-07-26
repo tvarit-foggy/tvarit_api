@@ -10,6 +10,9 @@ from .resources import (
     User,
     Users,
     Teams,
+    Annotations,
+    Alerting,
+    Snapshot,
 )
 
 
@@ -41,3 +44,6 @@ class Tvarit:
         self.user = User(self.api)
         self.users = Users(self.api)
         self.teams = Teams(self.api)
+        self.annotations = Annotations(self.api)
+        self.alerting = Alerting(self.api)
+        self.snapshot = Snapshot(self.api)
