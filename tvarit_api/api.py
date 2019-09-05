@@ -103,11 +103,11 @@ class TvaritAPI:
                 self.auth = requests.auth.HTTPBasicAuth(*self.auth)
 
     def __getattr__(self, item):
-        def __request_runnner(url, json=None, headers=None):
+        def __request_runnner(url, json=None, headers=None, params=None):
             __url = "%s%s" % (self.url, url)
             runner = getattr(self.s, item.lower())
             r = runner(
-                __url, json=json, headers=headers, auth=self.auth, verify=self.verify
+                __url, json=json, headers=headers, params=params, auth=self.auth, verify=self.verify
             )
 
             if 500 <= r.status_code < 600:

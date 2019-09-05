@@ -13,6 +13,12 @@ from .resources import (
     Annotations,
     Alerting,
     Snapshot,
+    Machine,
+    Model,
+    Parameter,
+    Pipeline,
+    Handler,
+    Task,
 )
 
 
@@ -47,3 +53,10 @@ class Tvarit:
         self.annotations = Annotations(self.api)
         self.alerting = Alerting(self.api)
         self.snapshot = Snapshot(self.api)
+
+        self.machine = Machine(self.api)
+        self.model = Model(self.api)
+        self.parameter = Parameter(self.api)
+        self.pipeline = Pipeline(self.api)
+        self.handler = Handler(self.api)
+        self.task = Task(self.api)
