@@ -69,6 +69,7 @@ class TestTvaritAPI(unittest.TestCase):
             auth=basic_auth,
             headers=None,
             json=None,
+            params=None,
             verify=False,
         )
 
