@@ -4,7 +4,6 @@ verify_ssl = true
 name = "tvarit_api"
 
 [packages]
-pyyaml = "~=5.1"
 requests = "~=2.22"
 pyotp = "~=2.2"
 

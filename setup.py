@@ -15,7 +15,7 @@ setup(
     author_email="info@tvarit.com",
     license="MIT",
     packages=find_packages(),
-    install_requires=["requests", "pyyaml"],
+    install_requires=["requests", "pyotp"],
     tests_require=["requests-mock"],
     classifiers=[
         "Development Status :: 3 - Alpha",
