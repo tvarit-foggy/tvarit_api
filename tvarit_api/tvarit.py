@@ -19,6 +19,7 @@ from .resources import (
     Pipeline,
     Handler,
     Task,
+    Output,
 )
 
 
@@ -60,3 +61,4 @@ class Tvarit:
         self.pipeline = Pipeline(self.api)
         self.handler = Handler(self.api)
         self.task = Task(self.api)
+        self.output = Output(self.api)

@@ -17,3 +17,4 @@ from .parameter import Parameter
 from .pipeline import Pipeline
 from .handler import Handler
 from .task import Task
+from .output import Output
