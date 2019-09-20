@@ -393,4 +393,12 @@ predictions = tvarit_api.output.get_predictions(
                                             )
 ```
 
+### Get Dependencies
+```sh
+dependencies = tvarit_api.output.get_features(
+                                            machine = "Cars_Assembly_Line", 
+                                            label = "Sample_shutdown_occured"
+                                            )
+```
+
 
