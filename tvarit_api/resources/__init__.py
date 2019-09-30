@@ -18,3 +18,4 @@ from .pipeline import Pipeline
 from .handler import Handler
 from .task import Task
 from .output import Output
+from .job import Job

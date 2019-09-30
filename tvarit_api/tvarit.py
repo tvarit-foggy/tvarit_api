@@ -20,6 +20,7 @@ from .resources import (
     Handler,
     Task,
     Output,
+    Job
 )
 
 
@@ -62,3 +63,4 @@ class Tvarit:
         self.handler = Handler(self.api)
         self.task = Task(self.api)
         self.output = Output(self.api)
+        self.job = Job(self.api)
