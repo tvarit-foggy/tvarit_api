@@ -46,7 +46,7 @@ class Model(Base):
         endpoint = "/models/json"
         return self.api.POST(endpoint, json=models, params=params)
 
-    def list_models(self, detail=False, depends=False, rdepends=False, parameters=None, resolve=None):
+    def list_models(self, detail=False, depends=False, rdepends=False, parameters=None, resolve=None, limit=100, page=0):
 
         params = dict(
             detail=detail,
@@ -54,6 +54,8 @@ class Model(Base):
             rdepends=rdepends,
             parameters=parameters,
             resolve=resolve or [],
+            limit=limit,
+            page=page,
         )
 
         endpoint = "/models"

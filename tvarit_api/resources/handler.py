@@ -43,12 +43,14 @@ class Handler(Base):
         endpoint = "/handlers/json"
         return self.api.POST(endpoint, json=handlers, params=params)
 
-    def list_handlers(self, detail=False, rdepends=False, resolve=None):
+    def list_handlers(self, detail=False, rdepends=False, resolve=None, limit=100, page=0):
 
         params = dict(
             detail=detail,
             rdepends=rdepends,
             resolve=resolve or [],
+            limit=limit,
+            page=page,
         )
 
         endpoint = "/handlers"

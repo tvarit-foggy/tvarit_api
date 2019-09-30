@@ -45,13 +45,15 @@ class Machine(Base):
         endpoint = "/machines/json"
         return self.api.POST(endpoint, json=machines, params=params)
 
-    def list_machines(self, detail=False, depends=False, rdepends=False, resolve=None):
+    def list_machines(self, detail=False, depends=False, rdepends=False, resolve=None, limit=100, page=0):
 
         params = dict(
             detail=detail,
             depends=depends,
             rdepends=rdepends,
             resolve=resolve or [],
+            limit=limit,
+            page=page,
         )
 
         endpoint = "/machines"

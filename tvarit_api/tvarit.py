@@ -53,8 +53,6 @@ class Tvarit:
         self.annotations = Annotations(self.api)
         self.alerting = Alerting(self.api)
         self.snapshot = Snapshot(self.api)
-<<<<<<< HEAD
-=======
 
         self.machine = Machine(self.api)
         self.model = Model(self.api)
@@ -62,4 +60,3 @@ class Tvarit:
         self.pipeline = Pipeline(self.api)
         self.handler = Handler(self.api)
         self.task = Task(self.api)
->>>>>>> upstream/master
