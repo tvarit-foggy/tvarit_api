@@ -43,12 +43,14 @@ class Pipeline(Base):
         endpoint = "/pipelines/json"
         return self.api.POST(endpoint, json=pipelines, params=params)
 
-    def list_pipelines(self, detail=False, rdepends=False, resolve=None):
+    def list_pipelines(self, detail=False, rdepends=False, resolve=None, limit=100, page=0):
 
         params = dict(
             detail=detail,
             rdepends=rdepends,
             resolve=resolve or [],
+            limit=limit,
+            page=page,
         )
 
         endpoint = "/pipelines"
