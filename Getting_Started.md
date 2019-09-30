@@ -1,4 +1,4 @@
-# Getting Satrted with API.
+# Getting Started with API.
 
 In this tutorial we will learn how to use tvarit_api python client for web integration.
 
